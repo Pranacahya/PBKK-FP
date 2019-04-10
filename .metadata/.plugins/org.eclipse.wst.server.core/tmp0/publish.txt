@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Apr 10 17:15:22 ICT 2019
+org.eclipse.jst.jee.server\:/binary\:D\:\\Semester\ 8\\PBKK\\SIP-TC\\SIP-TC\\WebContent\\WEB-INF\\lib\\spring-web-5.1.5.RELEASE.jar=WEB-INF/lib/spring-web-5.1.5.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:D\:\\Semester\ 8\\PBKK\\SIP-TC\\SIP-TC\\WebContent\\WEB-INF\\lib\\spring-web-5.1.5.RELEASE-sources.jar=WEB-INF/lib/spring-web-5.1.5.RELEASE-sources.jar
