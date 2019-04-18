@@ -18,4 +18,10 @@ public class HomeController {
 	{
 		return "dashboard_admin";
 	}
+	
+	@RequestMapping("/pesan")
+	public String showPesan()
+	{
+		return "print";
+	}
 }
