@@ -21,4 +21,4 @@ Merupakan aplikasi yang bertujuan untuk membantu mahasiswa dalam mencetak file a
 - Mahasiswa harus mendatangi tempat printer untuk mencetak dokumen.
 
 
-![alt text](http://url/to/HalamanDaftarPesan.png)
+![alt text](https://raw.githubusercontent.com/Pranacahya/PBKK-FP/HalamanDaftarPesan.png)
