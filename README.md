@@ -18,7 +18,11 @@ Merupakan aplikasi yang bertujuan untuk membantu mahasiswa dalam mencetak file a
 ### Permasalahan
 - Terlalu banyak antrian saat ingin mencetak dokumen.
 - Pencetakan dokumen kadang terkendala kondisi printer.
-- Mahasiswa harus mendatangi tempat printer untuk mencetak dokumen.
+- Mahasiswa harus mendatangi tempat printer untuk mencetak dokumen.  
 
 
-![alt text](https://github.com/Pranacahya/PBKK-FP/blob/master/HalamanDaftarPesan.PNG)
+#### Halaman Depan Website  
+![alt text](./Dashboard.jpg)
+
+#### Halaman Pesanan Print  
+![alt text](./HalamanDaftarPesan.PNG)
