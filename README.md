@@ -21,7 +21,10 @@ Merupakan aplikasi yang bertujuan untuk membantu mahasiswa dalam mencetak file a
 - Mahasiswa harus mendatangi tempat printer untuk mencetak dokumen.  
 
 
-#### Halaman Depan Website  
+#### Halaman Utama  
+![alt text](./HomePage.jpg)  
+
+#### Halaman Dashboard Admin  
 ![alt text](./Dashboard.jpg)
 
 #### Halaman Pesanan Print  
