@@ -8,8 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	@RequestMapping("/")
-	public String showPage()
+	public String showHome()
 	{
 		return "menu";
+	}
+	
+	@RequestMapping("/admin")
+	public String show()
+	{
+		return "dashboard_admin";
 	}
 }
