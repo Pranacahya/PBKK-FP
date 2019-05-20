@@ -6,11 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -33,9 +31,9 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/dashboard_admin", method=RequestMethod.GET)
-	public String dashboardAdmin(HttpServletRequest request) 
+	public String dashboardAdmin(HttpSession session) 
 	{
-		Admin admin = (Admin)request.getSession().getAttribute("admin_data");
+		Admin admin = (Admin)session.getAttribute("admin_data");
 		if (admin == null) {
 			return "index";
 		}
@@ -49,9 +47,6 @@ public class AdminController {
 	{
 		String nrp_admin = request.getParameter("nrp_admin");
 		String password = request.getParameter("password");
-		
-		System.out.println("NRP admin = "+nrp_admin);
-		System.out.println("Password = "+password);
 		
 		SessionFactory factory = new Configuration()
 				.configure("hibernate.cfg.xml")
@@ -72,7 +67,7 @@ public class AdminController {
 			Admin admin_data = admins.get(0);
 			request.getSession().setAttribute("admin_data", admin_data);
 			
-			return dashboardAdmin(request);
+			return_page = "dashboard_admin";
 		}
 		catch (Exception e) {
 			System.out.println(e);
