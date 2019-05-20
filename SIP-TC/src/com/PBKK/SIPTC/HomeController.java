@@ -13,12 +13,6 @@ public class HomeController {
 		return "menu";
 	}
 	
-	@RequestMapping("/admin")
-	public String show()
-	{
-		return "dashboard_admin";
-	}
-	
 	@RequestMapping("/pesan")
 	public String showPesan()
 	{
