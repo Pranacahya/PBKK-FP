@@ -1,42 +1,27 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
- 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
- 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 	<meta name="description" content="">
-  	<meta name="author" content="">
 
-  	<title>SIPTC</title>
-	
-	<!-- Custom fonts for this template-->
-	<link href="<c:url value="/resources/sb_admin/vendor/fontawesome-free/css/all.min.css" />" rel="stylesheet">
-	<link href="<c:url value="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />" rel="stylesheet">
-	
-	<!-- Custom styles for this template-->
-	<link href="<c:url value="/resources/sb_admin/css/sb-admin-2.min.css" />" rel="stylesheet">
-	<script>
-		function addRow()
-		{
-			var table = document.getElementsById('dataTable');
-			var newRow = table.insertRow(1);
-			
-			var cell = newRow.insertCell(0);
-			var cell1 = newRow.insertCell(1);
-			var cell2 = newRow.insertCell(2);
-			var cell3 = newRow.insertCell(3);
-			
-			cell.innerHTML = "Sedang diproses";
-			cell1.innerHTML = "Sedang diproses";
-			cell2.innerHTML = "Sedang diproses";
-			cell3.innerHTML = "-";			
-		}
-	</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SIPTC</title>
+
+ <!-- Custom fonts for this template-->
+  <link href="<c:url value="/resources/sb_admin/vendor/fontawesome-free/css/all.min.css" />" rel="stylesheet">
+  <link href="<c:url value="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="<c:url value="/resources/sb_admin/css/sb-admin-2.min.css" />" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -57,6 +42,61 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard Admin -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard Admin</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Components</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Utilities</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="utilities-border.html">Borders</a>
+            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item active">
@@ -263,55 +303,27 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Kirim File</h6>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Nama</th>
-                      <th>NRP</th>
-                      <th>Status</th>
-                      <th>Total Harga</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                   <tr>
-                      <th>1</th>
-                      <th>Andi Yanto</th>
-                      <th>05111540000076</th>
-                      <th>Selesai</th>
-                      <th>12.000</th>
-                    </tr>
-                    <tr>
-                      <th>2</th>
-                      <th>Andi Yanto</th>
-                      <th>05111540000076</th>
-                      <th>Selesai</th>
-                      <th>12.000</th>
-                    </tr>
-                    <tr>
-                      <th>3</th>
-                      <th>Andi Yanto</th>
-                      <th>05111540000076</th>
-                      <th>Selesai</th>
-                      <th>12.000</th>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            	<%-- <form action="prosesUser" modelAttribute="User" method="post" enctype="multipart/form-data"> --%>
+            	<form action="prosesUser" modelAttribute="User" method="POST" enctype="multipart/form-data">
+            		First Name : <input name="nameUser" placeholder="Masukan nama mu"/>
+            		<br>
+            		NRP : <input name="nrpUser" placeholder="Masukan NRP mu"/>
+            		<br>
+					File to upload: <input type="file" name="file"><br/> 
+					<input type="submit" value="Upload"> Press here to upload the file!	
+            		<!-- <form modelAttribute="PathFile">
+            			Select image to upload:
+				    	<input type="file" name="pathFile"/>
+				    	<input type="submit" value="Upload file" name="submit">
+            		</form> -->
+				</form>
+				
             </div>
           </div>
 
-        </div>
-        <div class="container-fluid" align="center">
-	        <form action="formUser">
-	        	<input type="submit">
-	        	<a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>  Pesan Cetak</a>
-	        </form>	
-	        <button onClick="addRow()">Add Row</button>
         </div>
         <!-- /.container-fluid -->
       </div>
