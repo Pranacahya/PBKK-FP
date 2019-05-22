@@ -29,7 +29,21 @@ public class Transaksi {
 	
 	@Column(name="nrp_user")
 	private String nrp_user;
+
+	@Column(name="note_user")
+	private String note_user;
 	
+	@Column(name="file_user")
+	private String file_user;
+	
+	public String getFile_user() {
+		return file_user;
+	}
+
+	public void setFile_user(String file_user) {
+		this.file_user = file_user;
+	}
+
 	public int getId_admin() {
 		return id_admin;
 	}
@@ -66,6 +80,26 @@ public class Transaksi {
 		return nrp_user;
 	}
 
+	public Transaksi(int id_admin, String tanggal_transaksi, String waktu_transaksi, String nama_user, String nrp_user,
+			String note_user, String file_user, int total_harga) {
+		this.id_admin = id_admin;
+		this.tanggal_transaksi = tanggal_transaksi;
+		this.waktu_transaksi = waktu_transaksi;
+		this.nama_user = nama_user;
+		this.nrp_user = nrp_user;
+		this.note_user = note_user;
+		this.file_user = file_user;
+		this.total_harga = total_harga;
+	}
+
+	public String getNote_user() {
+		return note_user;
+	}
+
+	public void setNote_user(String note_user) {
+		this.note_user = note_user;
+	}
+
 	public void setNrp_user(String nrp_user) {
 		this.nrp_user = nrp_user;
 	}
@@ -81,13 +115,6 @@ public class Transaksi {
 	@Column(name="total_harga")
 	private int total_harga;
 
-
-	@Override
-	public String toString() {
-		return "Transaksi [id=" + id + ", id_admin=" + id_admin + ", tanggal_transaksi=" + tanggal_transaksi
-				+ ", waktu_transaksi=" + waktu_transaksi + ", nama_user=" + nama_user + ", nrp_user=" + nrp_user
-				+ ", total_harga=" + total_harga + "]";
-	}	
 	
 	public int getId() {
 		return id;
@@ -103,18 +130,6 @@ public class Transaksi {
 	public Transaksi() {
 		
 	}
-
-	public Transaksi( int id_admin,String tanggal_transaksi, String waktu_transaksi, String nama_user, String nrp_user,
-			int total_harga) 
-	{	
-		this.id_admin = id_admin;
-		this.tanggal_transaksi = tanggal_transaksi;
-		this.waktu_transaksi = waktu_transaksi;
-		this.nama_user = nama_user;
-		this.nrp_user = nrp_user;
-		this.total_harga = total_harga;
-	}
-	
 
 
 }

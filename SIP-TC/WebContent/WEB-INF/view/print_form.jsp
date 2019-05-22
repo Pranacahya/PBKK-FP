@@ -48,17 +48,17 @@
 							<div class="text-center">
 								<h1 class="h4 text-gray-900 mb-4 font-weight-bold ">SIPTC</h1>
 							</div>
-							<form class="user">
+							<form  modelAttribute="Transaksi" method="POST" enctype="multipart/form-data" action="prosesUser">
 								<div class="form-group">
 									<div class="col-sm-12 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											id="printName" placeholder="Name">
+											id="printName" placeholder="Name" name="nama_user">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-12 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											id="printNRP" placeholder="NRP">
+											id="printNRP" placeholder="NRP" name="nrp_user">
 									</div>
 								</div>
 								<div class="form-group">
@@ -67,7 +67,7 @@
 											<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
 										</div>
 										<div class="custom-file">
-											<input type="file" class="custom-file-input"
+											<input type="file" name="file_user" class="custom-file-input"
 												id="inputGroupFile01"
 												aria-describedby="inputGroupFileAddon01"> <label
 												class="custom-file-label" for="inputGroupFile01">Choose
@@ -78,27 +78,28 @@
 								<div class="form-group pl-2 row">
 									<div class="col-sm-4 ">
 										<label class="font-weight-bold" for="">Number of
-											Copies</label> <input type="number" class="form-control form-control"
+											Copies</label> <input type="number" name="copies_user" class="form-control form-control"
 											id="numberCopy" placeholder="1">
 									</div>
 									<div class="col-sm-3">
 										<label class="font-weight-bold" for="">Pages</label>
 										<div class="custom-control custom-radio">
 											<input type="radio" class="custom-control-input"
-												id="defaultChecked" name="page" checked onclick="show1()">
+												id="defaultChecked" name="pages_user" checked onclick="show1()">
 											<label class="custom-control-label" for="defaultChecked">All
 												Pages</label>
 										</div>
 										<div class="custom-control custom-radio">
 											<input type="radio" class="custom-control-input"
-												id="defaultUnchecked" name="page" onclick="show2()">
+												id="defaultUnchecked" name="pages_user" onclick="show2()">
 											<label class="custom-control-label" for="defaultUnchecked">Pages</label>
 										</div>
 
 									</div>
 									<div class="col-sm-3 hide" id="detailPage">
-										<label class="font-weight-bold" for="">Pages detail</label> <input
-											type="text" class="form-control form-control-user"
+										<label class="font-weight-bold" for="">Pages detail</label> 
+										<input
+											type="text" class="form-control form-control-user" name="pages_user"
 											id="numberCopy" placeholder="1"> <small
 											class="form-text text-muted">ex: 2-5 or 2,4,6</small>
 									</div>
@@ -107,7 +108,7 @@
 									<div class="col-sm-3">
 										<label class="font-weight-bold" for="">Color</label>
 										<div class="input-group">
-											<select class="custom-select" name="color" id="">
+											<select class="custom-select" name="color_user" id="">
 												<option value="">Choose</option>
 												<option value="fullColor">Full Color</option>
 												<option value="grayscale">Grayscale</option>
@@ -118,7 +119,7 @@
 									<div class="col-sm-4">
 										<Label class="font-weight-bold">Paper Size</Label>
 										<div class="input-group">
-											<select class="custom-select" name="paperSize" id="">
+											<select class="custom-select" name="paper_user" id="">
 												<option value="">Choose</option>
 												<option value="A4">A4</option>
 												<option value="A5">A5</option>
@@ -129,7 +130,7 @@
 									<div class="col-sm-4">
 										<Label class="font-weight-bold">Side</Label>
 										<div class="input-group">
-											<select class="custom-select" name="side" id="">
+											<select class="custom-select" name="side_user" id="">
 												<option value="">Choose</option>
 												<option value="oneSide">One Side</option>
 												<option value="twoSides">Two Sides</option>
@@ -141,15 +142,12 @@
 								<div class="form-group">
 									<Label class="font-weight-bold">Note</Label>
 									<div class="input-group">
-										<textarea class="form-control" aria-label="With textarea"></textarea>
+										<textarea name="note_user" class="form-control" aria-label="With textarea"></textarea>
 									</div>
 								</div>
 								<div class="form-group">
-									<a href="login.html"
-										class="btn btn-primary btn-user col-sm-4 font-weight-bold ">
-										PRINT </a>
+									<input type="submit" value="SUBMIT">
 								</div>
-
 								<hr>
 							</form>
 
