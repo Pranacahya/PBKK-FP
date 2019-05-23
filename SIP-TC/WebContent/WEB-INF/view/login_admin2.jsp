@@ -44,7 +44,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
-                  <form class="user" action="processloginadmin" method="POST">
+                  <form class="user" action="processlogin" method="POST">
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" name="nrp_admin" placeholder="Enter NRP" />
                     </div>

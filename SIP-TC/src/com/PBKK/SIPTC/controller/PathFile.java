@@ -1,4 +1,4 @@
-package com.PBKK.SIPTC;
+package com.PBKK.SIPTC.controller;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

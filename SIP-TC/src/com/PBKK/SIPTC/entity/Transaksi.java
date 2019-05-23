@@ -1,10 +1,12 @@
-package com.PBKK.SIPTC;
+package com.PBKK.SIPTC.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,11 +14,8 @@ import javax.persistence.Table;
 public class Transaksi {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name="id_transaksi")
 	private int id;
-	
-	@Column(name="id_admin")
-	private int id_admin;
 
 	@Column(name="tanggal_transaksi")
 	private String tanggal_transaksi;
@@ -36,6 +35,13 @@ public class Transaksi {
 	@Column(name="file_user")
 	private String file_user;
 	
+	@Column(name="total_harga")
+	private Integer total_harga;
+	
+	@ManyToOne
+	@JoinColumn(name="id_admin", nullable=true)
+	private Admin admin;
+	
 	public String getFile_user() {
 		return file_user;
 	}
@@ -44,12 +50,12 @@ public class Transaksi {
 		this.file_user = file_user;
 	}
 
-	public int getId_admin() {
-		return id_admin;
+	public Admin getId_admin() {
+		return admin;
 	}
 
-	public void setId_admin(int id_admin) {
-		this.id_admin = id_admin;
+	public void setId_admin(Admin theAdmin) {
+		this.admin = theAdmin;
 	}
 
 	public String getTanggal_transaksi() {
@@ -80,9 +86,8 @@ public class Transaksi {
 		return nrp_user;
 	}
 
-	public Transaksi(int id_admin, String tanggal_transaksi, String waktu_transaksi, String nama_user, String nrp_user,
-			String note_user, String file_user, int total_harga) {
-		this.id_admin = id_admin;
+	public Transaksi(String tanggal_transaksi, String waktu_transaksi, String nama_user, String nrp_user,
+			String note_user, String file_user, Integer total_harga) {
 		this.tanggal_transaksi = tanggal_transaksi;
 		this.waktu_transaksi = waktu_transaksi;
 		this.nama_user = nama_user;
@@ -108,28 +113,20 @@ public class Transaksi {
 		return total_harga;
 	}
 
-	public void setTotal_harga(int total_harga) {
+	public void setTotal_harga(Integer total_harga) {
 		this.total_harga = total_harga;
 	}
-
-	@Column(name="total_harga")
-	private int total_harga;
-
 	
 	public int getId() {
 		return id;
 	}
 
-
-
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public Transaksi() {
 		
 	}
-
 
 }

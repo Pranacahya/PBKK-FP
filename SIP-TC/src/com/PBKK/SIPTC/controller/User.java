@@ -1,4 +1,4 @@
-package com.PBKK.SIPTC;
+package com.PBKK.SIPTC.controller;
 
 public class User {
 	String nameUser;

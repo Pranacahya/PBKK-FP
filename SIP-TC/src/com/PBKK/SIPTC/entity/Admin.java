@@ -1,10 +1,13 @@
-package com.PBKK.SIPTC;
+package com.PBKK.SIPTC.entity;
+
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,6 +32,9 @@ public class Admin {
 	
 	@Column(name="password")
 	private String password;
+	
+	@OneToMany(mappedBy="admin")
+	private Set<Transaksi> transactions;
 	
 	public Admin() {
 		// TODO Auto-generated constructor stub
@@ -81,4 +87,9 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public int getId_admin() {
+		return id_admin;
+	}
 }
+

@@ -48,7 +48,7 @@
 							<div class="text-center">
 								<h1 class="h4 text-gray-900 mb-4 font-weight-bold ">SIPTC</h1>
 							</div>
-							<form  modelAttribute="Transaksi" method="POST" enctype="multipart/form-data" action="prosesUser">
+							<form modelAttribute="Transaksi" method="POST" enctype="multipart/form-data" action="prosesUser">
 								<div class="form-group">
 									<div class="col-sm-12 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
