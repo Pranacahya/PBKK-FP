@@ -16,7 +16,6 @@ import com.PBKK.SIPTC.entity.Admin;
 public class AdminDAOImpl implements AdminDAO {
 
 	@Override
-	@Transactional
 	public Admin getAdmin(String nrp, String password) {
 		
 		// get the current hibernate session
@@ -37,7 +36,6 @@ public class AdminDAOImpl implements AdminDAO {
 		// execute query and get one admin data
 		List<Admin> resultAdmin = query.getResultList();
 //		System.out.println(resultAdmin);
-		
 		currentSession.close();
 		
 		// return the result

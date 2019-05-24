@@ -24,6 +24,7 @@
         
         <mapping class="com.PBKK.SIPTC.entity.Admin"></mapping>
         <mapping class="com.PBKK.SIPTC.entity.Transaksi"></mapping>
+        <mapping class="com.PBKK.SIPTC.entity.Status"></mapping>
     
     </session-factory>
 </hibernate-configuration>

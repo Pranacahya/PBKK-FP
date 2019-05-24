@@ -23,23 +23,22 @@ public class TransaksiDAOImpl implements TransaksiDAO {
 			.configure("hibernate.cfg.xml")
 			.addAnnotatedClass(Transaksi.class)
 			.buildSessionFactory();
-	Session currentSession = factory.getCurrentSession();
 	
 	@Override
-	@Transactional
 	public List<Transaksi> getAllTransaksi() {
 		
+		Session currentSession = factory.getCurrentSession();
+		currentSession.beginTransaction();
 		List<Transaksi> trans;
 		System.out.println("my session is "+currentSession.getTransaction().isActive());
 		System.out.println("commited");
 		
-		currentSession.beginTransaction();
 		trans = currentSession
 				.createQuery("from Transaksi", Transaksi.class)
 				.getResultList();
 		System.out.println(trans);
-		
 		currentSession.close();
+		
 		return trans;
 	}
 
@@ -126,21 +125,21 @@ public class TransaksiDAOImpl implements TransaksiDAO {
 	}
 
 	@Override
-	@Transactional
 	public void deleteTransaksi(int id) {
 		
+		Session currentSession = factory.getCurrentSession();
 		currentSession.beginTransaction();
 		Query query = currentSession
 				.createQuery("delete from Transaksi where id_transaksi=:id", Transaksi.class);
 		query.setParameter("id", id);
 		query.executeUpdate();
-		
 		currentSession.close();
 	}
 
 	@Override
 	public Transaksi getTransaksi(int id) {
 		
+		Session currentSession = factory.getCurrentSession();
 		currentSession.beginTransaction();
 		Transaksi transaksi = currentSession.get(Transaksi.class, id);
 		currentSession.close();
@@ -151,6 +150,7 @@ public class TransaksiDAOImpl implements TransaksiDAO {
 	@Override
 	public void updateTransaksi(Transaksi transaksi) {
 		
+		Session currentSession = factory.getCurrentSession();
 		currentSession.beginTransaction();
 		currentSession.saveOrUpdate(transaksi);
 		currentSession.close();

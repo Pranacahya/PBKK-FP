@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.PBKK.SIPTC.dao.AdminDAO;
+import com.PBKK.SIPTC.dao.StatusDAO;
 import com.PBKK.SIPTC.dao.TransaksiDAO;
 import com.PBKK.SIPTC.entity.Admin;
+import com.PBKK.SIPTC.entity.Status;
 import com.PBKK.SIPTC.entity.Transaksi;
 
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 
 @Controller
 @RequestMapping(value="/admin")
@@ -30,9 +33,8 @@ public class AdminController {
 	@Autowired
 	private TransaksiDAO transaksiDAO;
 	
-	private void setAdminSession(HttpServletRequest request, Admin admin_data) {
-		request.getSession().setAttribute("admin_data", admin_data);
-	}
+	@Autowired
+	private StatusDAO statusDAO;
 	
 	@GetMapping(value="/login")
 	public String loginPageAdmin() {
@@ -79,10 +81,14 @@ public class AdminController {
 	// Proses transaksi oleh admin
 	@GetMapping(value="/transaksi")
 	public String prosesTransaksi(@RequestParam("transaksi_id")int id,
+			HttpSession session,
 			Model model)
 	{
 		Transaksi theTransaksi = transaksiDAO.getTransaksi(id);
+		List<Status> statuses = statusDAO.getAllStatus();
+		
 		model.addAttribute("transaksi", theTransaksi);
+		model.addAttribute("statuses", statuses);
 		return "update_transaksi";
 	}
 	
@@ -103,7 +109,8 @@ public class AdminController {
 	
 	@PostMapping(value="/processlogin")
 	public String processLogin(HttpServletRequest request, 
-			Model model) 
+			HttpSession session,
+			ModelMap model) 
 	{
 		String return_page = "redirect:/admin/login";
 		String nrp_admin = request.getParameter("nrp_admin");
@@ -111,7 +118,7 @@ public class AdminController {
 		Admin admin_data = adminDAO.getAdmin(nrp_admin, password);
 		
 		try {
-			setAdminSession(request, admin_data);
+			session.setAttribute("admin_data", admin_data);
 			return_page = "redirect:/admin/dashboard";
 		}
 		catch (Exception e) {
@@ -120,6 +127,25 @@ public class AdminController {
 		
 		return return_page;
 	}
+//	@PostMapping(value="/processlogin")
+//	public String processLogin(HttpServletRequest request, 
+//			Model model) 
+//	{
+//		String return_page = "redirect:/admin/login";
+//		String nrp_admin = request.getParameter("nrp_admin");
+//		String password = request.getParameter("password");
+//		Admin admin_data = adminDAO.getAdmin(nrp_admin, password);
+//		
+//		try {
+//			setAdminSession(request, admin_data);
+//			return_page = "redirect:/admin/dashboard";
+//		}
+//		catch (Exception e) {
+//			System.out.println(e);
+//		}
+//		
+//		return return_page;
+//	}
 	
 	@RequestMapping(value="/logout")
 	public String logout_admin(HttpServletRequest request) 

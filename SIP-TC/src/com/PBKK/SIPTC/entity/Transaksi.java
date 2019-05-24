@@ -38,10 +38,22 @@ public class Transaksi {
 	@Column(name="total_harga")
 	private Integer total_harga;
 	
-	@ManyToOne
+	@ManyToOne(targetEntity=Admin.class)
 	@JoinColumn(name="id_admin", nullable=true)
 	private Admin admin;
 	
+	@ManyToOne(targetEntity=Status.class)
+	@JoinColumn(name="id_status", nullable=false)
+	private Status status;
+	
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
 	public String getFile_user() {
 		return file_user;
 	}
@@ -50,11 +62,11 @@ public class Transaksi {
 		this.file_user = file_user;
 	}
 
-	public Admin getId_admin() {
+	public Admin getAdmin() {
 		return admin;
 	}
 
-	public void setId_admin(Admin theAdmin) {
+	public void setAdmin(Admin theAdmin) {
 		this.admin = theAdmin;
 	}
 
